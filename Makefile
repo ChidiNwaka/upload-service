@@ -1,6 +1,11 @@
 APP=upload-service
 PORT=5000
 
+.PHONY: setup clean
+
+setup:
+	@[ -f .env ] || cp .env.example .env
+
 venv:
 	python3 -m venv .venv
 
