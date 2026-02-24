@@ -1,3 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.venv/
 .env
-.venv
-./__pycache__
+
+# Tests / tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Docker
+*.log
