@@ -1,4 +1,5 @@
-from flask import Blueprint, jsonify
+import os
+from flask import Blueprint, jsonify, current_app
 
 bp = Blueprint("routes", __name__)
 
@@ -8,14 +9,14 @@ def home():
 
 @bp.route("/v1/uploads", methods=["POST"])
 def upload():
-    bp.logger.info("POST to upload an object")
+    current_app.logger.info("POST to upload an object")
     return jsonify({
         "message": "Not implemented yet",
     }), 501
 
 @bp.route("/v1/health")
 def health():
-    bp.logger.info("Get /health called")
+    current_app.logger.info("Get /health called")
     return jsonify({
         "status": "ok",
         "service": "upload-service",
